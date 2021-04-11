@@ -1,0 +1,114 @@
+/* couleurs */
+/* 
+bleu: #0065FC
+bleu clair #DEEBFF
+gris : #F2F2F2 */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+input {
+  font-family: "Raleway", sans-serif;
+}
+
+section {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header and nav */
+header {
+  width: 90vw;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+nav ul li {
+  margin-left: 5vh;
+  list-style: none;
+  padding: clamp(20px, 4vh, 50px) clamp(20px, 1.5vw, 50px);
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li a:active,
+nav ul li a:visited {
+  color: unset;
+}
+
+#homes,
+#homes a:visited,
+#homes a:active {
+  color: #0065fc;
+  border-top: 1px solid #0065fc;
+}
+
+#signup {
+  font-weight: 700;
+  color: #0065fc;
+}
+
+/* Search-Box Section */
+h1 {
+  margin-bottom: 1vh;
+}
+
+.search-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 2vh;
+}
+
+.search-bar > div {
+  padding: 1vh 1.5vh;
+}
+
+.search-icon {
+  background: #f2f2f2;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-field {
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.search-field input {
+  font-weight: 700;
+  border: none;
+}
+
+.search-button {
+  background: #0065fc;
+  border-radius: 0 10px 10px 0;
+}
+
+.search-button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+/* Splash Filtres */
+.filters-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
