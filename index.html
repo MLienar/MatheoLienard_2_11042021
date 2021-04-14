@@ -9,19 +9,21 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="img/logo/Reservia.svg" alt="logo Reservia">
-        </div>
         <nav>
             <ul>
-                <li id="homes"><a href="" >Hébergements </a></li>
-                <li><a href=""> Activités </a></li>
-                <li><a href="" id="signup"> S'inscrire </a></li>
+                <li class="logo">
+                    <img src="img/logo/Reservia.svg" alt="logo Reservia">
+                </li>
+                <div class="page-links">
+                    <li id="homes"><a href="#hebergements" >Hébergements </a></li>
+                    <li><a href="#activites"> Activités </a></li>
+                </div>
+                <li id="signup"><a href="" > S'inscrire </a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
+        <section class="splash-search">
             <h1>Trouvez votre hébérgement pour des vacances de rêve</h1>
             <p>En plein centre ville ou en pleine nature</p>
             <!-- Splash recherche -->
@@ -34,6 +36,7 @@
                 </div>
                 <div class="search-button">
                     <a href="">Rechercher</a>
+                    <i class="fas fa-search"></i>
                 </div>
             </div>
             <!-- Splash Filtres -->
@@ -63,11 +66,11 @@
             </div>
         </section>
 
-        <section class="hebergements">
+        <section class="hebergements" id="hebergements">
             <div class="main-hebergements">
                 <h2>Hébergements à Marseille</h2>
                 <div class="houses-containers">
-                    <div class="house-spotlight">
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="cannebiere"></div>
                         <div class="spotlight-label">
                             <h3>Auberge de la Cannebière</h3>
@@ -80,8 +83,8 @@
                                 <i class="fas fa-star grey-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="port"></div>
                         <div class="spotlight-label">
                             <h3>Hôtel du port</h3>
@@ -94,8 +97,8 @@
                                 <i class="fas fa-star blue-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="mouettes"></div>
                         <div class="spotlight-label">
                             <h3>Hôtel les mouettes</h3>
@@ -108,8 +111,8 @@
                                 <i class="fas fa-star grey-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="mer"></div>
                         <div class="spotlight-label">
                             <h3>Hôtel de la mer</h3>
@@ -122,8 +125,8 @@
                                 <i class="fas fa-star grey-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="panier"></div>
                         <div class="spotlight-label">
                             <h3>Auberge le panier</h3>
@@ -136,8 +139,8 @@
                                 <i class="fas fa-star grey-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="amina"></div>
                         <div class="spotlight-label">
                             <h3>Hôtel chez Amina</h3>
@@ -150,7 +153,7 @@
                                 <i class="fas fa-star blue-star"></i>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <a href="#">Afficher plus</a>
             </div>
@@ -160,7 +163,7 @@
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="houses-containers">
-                    <div class="house-spotlight">
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="soleil"></div>
                         <div class="spotlight-label">
                             <div class="label-text">
@@ -175,8 +178,8 @@
                                 <i class="fas fa-star blue-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="coeur"></div>
                         <div class="spotlight-label">
                             <div class="label-text">
@@ -191,8 +194,8 @@
                                   <i class="fas fa-star grey-star"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="house-spotlight">
+                    </a>
+                    <a href="#" class="house-spotlight">
                         <div class="spotlight-picture" id="bleu-blanc"></div>
                         <div class="spotlight-label">
                             <div class="label-text">
@@ -207,72 +210,98 @@
                                 <i class="fas fa-star blue-star"></i>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
-        <section>
+        <section id="activites">
             <h2>Activités à Marseille</h2>
             <div class="activites-mosaique">
                 <div class="mosaique-column column-1">
-                    <div class="mosaique-content full-height">
+                    <a href="#" class="mosaique-content full-height">
                         <div class="mosaique-image" id="port">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Vieux Port</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="mosaique-column column-2">
-                    <div class="mosaique-content two-thirds top-mosaic">
+                    <a href="#" class="mosaique-content two-thirds top-mosaic">
                         <div class="mosaique-image" id="pomegues">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Fort de Pomègues</h3>
                         </div>    
-                    </div>
-                    <div class="mosaique-content one-third">
+                    </a>
+                    <a href="#" class="mosaique-content one-third">
                         <div class="mosaique-image" id="frioul">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Iles du Frioul</h3>
                         </div>    
-                    </div>
+                    </a>
                 </div>
                 <div class="mosaique-column column-1">
-                    <div class="mosaique-content full-height">
+                    <a href="#" class="mosaique-content full-height">
                         <div class="mosaique-image" id="calanques">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Parc national des calanques</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="mosaique-column column-2">
-                    <div class="mosaique-content one-third top-mosaic">
+                    <a href="#" class="mosaique-content top-mosaic">
                         <div class="mosaique-image" id="garde">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Notre-Dame-de-la-Garde</h3>
                         </div>    
-                    </div>
-                    <div class="mosaique-content two-thirds">
+                    </a>
+                    <a href="#" class="mosaique-content">
                         <div class="mosaique-image" id="longchamp">
 
                         </div>
                         <div class="mosaique-label">
                             <h3>Parc Longchamp</h3>
                         </div>    
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>A propos</h3>
+                <ul class="footer-links">
+                    <li>Fonctionnement du site</li>
+                    <li>Conditions générales de vente</li>
+                    <li>Données et confidentialité</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Nos hébergements</h3>
+                <ul class="footer-links">
+                    <li>Charte graphique</li>
+                    <li>Soumettre votre hôtel</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Assistance</h3>
+                <ul class="footer-links">
+                    <li>Centre d'aide</li>
+                    <li>Nous contacter</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/9c197424a2.js" crossorigin="anonymous"></script>
 </body> 

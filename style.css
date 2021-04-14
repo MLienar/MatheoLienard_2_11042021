@@ -14,6 +14,13 @@ gris : #F2F2F2 */
 html,
 input {
   font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
 }
 
 main {
@@ -48,7 +55,23 @@ header {
   margin: auto;
 }
 
+nav {
+  width: 100%;
+}
+
 nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.page-links {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -57,6 +80,13 @@ nav ul li {
   margin-left: 5vh;
   list-style: none;
   padding: clamp(20px, 4vh, 50px) clamp(20px, 1.5vw, 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  justify-self: flex-start;
 }
 
 nav ul li a {
@@ -113,6 +143,9 @@ h1 {
 .search-button {
   background: #0065fc;
   border-radius: 0 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-button a {
@@ -122,10 +155,15 @@ h1 {
   font-size: 0.8em;
 }
 
+.search-button i {
+  display: none;
+  color: white;
+}
+
 /* Splash Filtres */
 .filters-container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   padding: 3vh 0;
   align-items: center;
 }
@@ -138,28 +176,43 @@ h1 {
 .filter {
   display: flex;
   flex-flow: row nowrap;
-  margin: 0 1vw;
-  height: 4vh;
+  margin: 1vh 1vw;
+  height: clamp(40px, 4vh, 70px);
   border: 2px solid #f2f2f2;
   border-radius: 50px;
   align-items: center;
+  padding-right: clamp(10px, 3vw, 15px);
 }
 
 .filter i {
   background: #deebff;
   color: #0065fc;
-  width: calc(4vh + 2px);
-  height: calc(4vh + 2px);
+  width: calc(clamp(40px, 4vh, 70px) + 2px);
+  height: calc(clamp(40px, 4vh, 70px) + 2px);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 50px;
   font-size: 14px;
+  transform: translateX(-2px);
 }
 
 .filter p {
   margin: 0 1vw;
+}
+
+.filter:hover {
+  cursor: pointer;
+  background: #deebff;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter:hover i {
+  color: white;
+  background: #0065fc;
+  transition: all 0.2s ease-in-out;
+  transform: translateX(5px);
 }
 
 /* Partie message */
@@ -205,6 +258,12 @@ h1 {
 
 .main-hebergements h2 {
   margin: 2vh 0 3vh 0;
+}
+
+.main-hebergements a {
+  text-decoration: none;
+  color: unset;
+  font-weight: 700;
 }
 
 .houses-containers {
@@ -303,7 +362,7 @@ h1 {
   color: #deebff;
 }
 
-.main-hebergements a {
+.show-more {
   text-decoration: none;
   color: black;
   font-weight: 700;
@@ -321,6 +380,11 @@ h1 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
+}
+
+.secondary-hebergements a {
+  text-decoration: none;
+  color: unset;
 }
 
 .secondary-title {
@@ -341,8 +405,9 @@ h1 {
   display: flex;
   flex-flow: row nowrap;
   margin-right: unset;
-  width: 100%;
+  width: 95%;
   height: 13vh;
+  min-height: fit-content;
   padding-bottom: unset;
 }
 
@@ -389,7 +454,7 @@ h1 {
 
 .mosaique-column {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   flex: 1 20%;
   justify-content: space-between;
   height: clamp(500px, 50vh, 700px);
@@ -402,22 +467,16 @@ h1 {
   box-shadow: 0 0 15px 10px rgba(0 0 0 / 5%);
   overflow: hidden;
   position: relative;
+  text-decoration: none;
+  color: unset;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .activites-mosaique :nth-child(4) {
   margin: 3vh 0;
-}
-
-.full-height {
-  height: 100%;
-}
-
-.two-thirds {
-  flex: 4 1;
-}
-
-.one-third {
-  flex: 3 1;
 }
 
 .mosaique-label {
@@ -426,21 +485,18 @@ h1 {
   align-items: center;
   height: 5vh;
   padding-left: 1vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 .mosaique-image {
-  height: 90%;
+  flex: 1 0 auto;
 }
 
-.two-thirds .mosaique-image {
-  height: 82%;
+.two-thirds {
+  flex: 2;
 }
 
-.one-third .mosaique-image {
-  height: 75%;
+.one-third {
+  flex: 1;
 }
 
 .top-mosaic {
@@ -481,4 +537,237 @@ h1 {
   background-image: url(img/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg);
   background-size: cover;
   background-position: center;
+}
+
+/* Footer */
+
+footer {
+  width: 100vw;
+  background: #f2f2f2;
+  margin-top: 5vh;
+  padding: 5vh 0;
+}
+
+.footer-content {
+  width: 90vw;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer-col {
+  margin-right: 10vw;
+}
+
+.footer-col h3 {
+  margin-bottom: 2vh;
+}
+
+.footer-col li {
+  list-style: none;
+  margin-bottom: 1vh;
+  font-size: 14px;
+}
+
+/* Media queries */
+
+/* Small Laptop */
+@media screen and (max-width: 1200px) {
+  .secondary-hebergements {
+    height: fit-content;
+    min-width: 339px;
+  }
+  .mosaique-column {
+    min-width: 200px;
+    max-width: 50vw;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 850px) {
+  .hebergements {
+    flex-flow: column-reverse nowrap;
+  }
+  .secondary-hebergements {
+    width: 70vw;
+    padding: 5vh 5vw;
+    margin: auto;
+    background: white;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 650px) {
+  header {
+    width: 100vw;
+    margin-bottom: 5vh;
+  }
+  nav ul {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  main {
+    width: 100vw;
+  }
+  .logo {
+    order: 1;
+    width: 30vw;
+    padding: 2vh 0;
+  }
+  #signup {
+    order: 2;
+    width: 30vw;
+  }
+  .page-links {
+    width: 100vw;
+    order: 2;
+    flex-flow: row nowrap;
+    order: 3;
+  }
+
+  .page-links li {
+    width: 50vw;
+    padding: 2vh 0 2vh 0;
+    margin: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #homes {
+    border-bottom: 4px solid #0065fc;
+    border-top: none;
+  }
+  .page-links li:nth-child(2) {
+    border-bottom: 4px solid #f2f2f2;
+  }
+  .splash-search {
+    width: 90vw;
+    margin: auto;
+  }
+
+  .search-button a {
+    display: none;
+  }
+  .search-button i {
+    display: block;
+  }
+  .filters-container {
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .filter {
+    margin: 1vh 0;
+    flex: 1;
+  }
+
+  .main-hebergements {
+    order: 1;
+    background: unset;
+    width: 90vw;
+    margin: auto;
+    padding: 3vh 0;
+  }
+
+  .main-hebergements .house-spotlight {
+    margin-right: 0;
+    height: clamp(200px, 18vh, 300px);
+  }
+
+  .main-hebergements .spotlight-picture {
+    height: 60%;
+  }
+
+  .secondary-hebergements {
+    padding: 3vh 0;
+    margin-top: 5vh;
+    border-radius: 0;
+    width: 100vw;
+    background: #f2f2f2;
+    order: 2;
+  }
+
+  .secondary-title {
+    margin: 3vh auto 5vh auto;
+    width: 90vw;
+  }
+
+  .secondary-hebergements .houses-containers {
+    width: 90vw;
+    margin: auto;
+  }
+
+  .secondary-hebergements .house-spotlight {
+    height: 20vh;
+    width: 87vw;
+  }
+  .secondary-hebergements .spotlight-picture {
+    width: 20vh;
+  }
+
+  #activites {
+    width: 90vw;
+    margin: auto;
+  }
+
+  .activites-mosaique {
+    flex-flow: column nowrap;
+    width: 90vw;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: unset;
+    margin-top: 2vh;
+  }
+
+  .mosaique-content {
+    margin: 3vh 0;
+  }
+
+  .mosaique-column {
+    flex: 1;
+    margin: 0 !important;
+    height: unset;
+    width: 100%;
+    max-width: unset;
+    min-width: unset;
+  }
+
+  .top-mosaic {
+    margin-bottom: 2vh;
+  }
+
+  .column-1 {
+    height: 35vh;
+  }
+
+  .column-2 {
+    height: 70vh;
+  }
+
+  .mosaique-label {
+    height: 7vh;
+    padding-left: 5vw;
+  }
+
+  .one-third {
+    flex: 1;
+  }
+  .full-height {
+    flex: 1;
+  }
+  .two-thirds {
+    flex: 1;
+  }
+
+  .footer-content {
+    flex-flow: column nowrap;
+  }
+
+  .footer-col {
+    margin-bottom: 5vh;
+  }
 }
