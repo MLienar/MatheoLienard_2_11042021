@@ -61,9 +61,10 @@ nav {
 
 nav ul {
   display: flex;
+  position: relative;
   flex-flow: row nowrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .nav-links {
@@ -87,6 +88,12 @@ nav ul li {
 
 .logo {
   justify-self: flex-start;
+  position: absolute;
+  height: 50%;
+  left: 0;
+  top: 25%;
+  padding: 0;
+  margin-left: 0;
 }
 
 nav ul li a {
@@ -173,9 +180,15 @@ h1 {
   margin-right: 2vw;
 }
 
+.filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .filter {
   display: flex;
   flex-flow: row nowrap;
+  flex: 0 1 auto;
   margin: 1vh 1vw;
   height: clamp(40px, 4vh, 70px);
   border: 2px solid #f2f2f2;
@@ -586,19 +599,6 @@ footer {
 
 /* Tablet */
 @media screen and (max-width: 850px) {
-  .hebergements {
-    flex-flow: column-reverse nowrap;
-  }
-  .secondary-hebergements {
-    width: 70vw;
-    padding: 5vh 5vw;
-    margin: auto;
-    background: white;
-  }
-}
-
-/* Phone */
-@media screen and (max-width: 650px) {
   header {
     width: 100vw;
     margin-bottom: 5vh;
@@ -615,6 +615,8 @@ footer {
     order: 1;
     width: 30vw;
     padding: 2vh 0;
+    position: initial;
+    margin-left: 3vw;
   }
   #signup {
     order: 2;
@@ -636,6 +638,26 @@ footer {
     align-items: center;
   }
 
+  .splash-search {
+    padding: 0 5vw;
+  }
+
+  .hebergements {
+    flex-flow: column-reverse nowrap;
+  }
+  .secondary-hebergements {
+    width: 70vw;
+    padding: 5vh 5vw;
+    margin: auto;
+    background: white;
+  }
+  #activites {
+    padding: 0 5vw;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 650px) {
   #homes {
     border-bottom: 4px solid #0065fc;
     border-top: none;
@@ -659,9 +681,12 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
+  .filters {
+    margin-top: 1vh;
+  }
   .filter {
-    margin: 1vh 0;
-    flex: 1;
+    margin: 1vh 1vh 1vh 0;
   }
 
   .main-hebergements {
@@ -701,11 +726,15 @@ footer {
   }
 
   .secondary-hebergements .house-spotlight {
-    height: 20vh;
+    height: calc(150px + 4vh);
     width: 87vw;
   }
   .secondary-hebergements .spotlight-picture {
-    width: 20vh;
+    width: calc(150px + 4vh);
+  }
+
+  .secondary-hebergements .spotlight-label {
+    flex: 1 1 60%;
   }
 
   #activites {
