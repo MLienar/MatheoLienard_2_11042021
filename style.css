@@ -77,13 +77,27 @@ nav ul {
   flex-flow: row nowrap;
 }
 
-nav ul li {
+nav > ul > li {
   margin-left: 5vh;
   list-style: none;
   padding: clamp(20px, 4vh, 50px) clamp(20px, 1.5vw, 50px);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-links ul {
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-links ul li {
+  margin-left: 5vw;
+  list-style: none;
+  color: #f2f2f2;
 }
 
 .logo {
@@ -96,20 +110,23 @@ nav ul li {
   margin-left: 0;
 }
 
-nav ul li a {
-  text-decoration: none;
-}
-
+nav ul li a,
 nav ul li a:active,
 nav ul li a:visited {
-  color: unset;
+  text-decoration: none;
+  color: #0065fc;
+}
+
+#link-activites,
+#link-activites :active,
+#link-activites :visited {
+  color: black;
 }
 
 #homes,
 #homes a:visited,
 #homes a:active {
   color: #0065fc;
-  border-top: 1px solid #0065fc;
 }
 
 #signup {
@@ -627,6 +644,8 @@ footer {
     order: 2;
     flex-flow: row nowrap;
     order: 3;
+    margin-left: 0;
+    padding: 0;
   }
 
   .page-links li {
@@ -636,6 +655,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .page-links ul li {
+    margin-left: 0;
   }
 
   #homes {
