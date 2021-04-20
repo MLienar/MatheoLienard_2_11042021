@@ -75,6 +75,8 @@ nav ul {
 .page-links {
   display: flex;
   flex-flow: row nowrap;
+  min-height: 100%;
+  padding: 0;
 }
 
 nav > ul > li {
@@ -87,17 +89,19 @@ nav > ul > li {
 }
 
 .page-links ul {
-  height: 100%;
+  height: -webkit-fill-available;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
 }
 
 .page-links ul li {
   margin-left: 5vw;
   list-style: none;
   color: #f2f2f2;
+  height: -webkit-fill-available;
 }
 
 .logo {
@@ -114,22 +118,20 @@ nav ul li a,
 nav ul li a:active,
 nav ul li a:visited {
   text-decoration: none;
-  color: #0065fc;
-}
-
-#link-activites,
-#link-activites :active,
-#link-activites :visited {
   color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#homes,
-#homes a:visited,
-#homes a:active {
+#homes a:hover,
+#link-activites:hover {
   color: #0065fc;
+  border-top: #0065fc 2px solid;
 }
 
-#signup {
+#signup a {
   font-weight: 700;
   color: #0065fc;
 }
@@ -648,7 +650,7 @@ footer {
     padding: 0;
   }
 
-  .page-links li {
+  .page-links ul li {
     width: 50vw;
     padding: 2vh 0 2vh 0;
     margin: unset;
@@ -661,13 +663,24 @@ footer {
     margin-left: 0;
   }
 
-  #homes {
+  .page-links li {
+    border-bottom: 4px solid #f2f2f2;
+  }
+
+  .page-links li:hover {
     border-bottom: 4px solid #0065fc;
     border-top: none;
   }
-  .page-links li:nth-child(2) {
-    border-bottom: 4px solid #f2f2f2;
+
+  #homes a:hover,
+  #link-activites:hover {
+    border: none;
   }
+
+  .page-links li a:hover {
+    border: none;
+  }
+
   .splash-search {
     padding: 0 5vw;
   }
@@ -676,7 +689,7 @@ footer {
     flex-flow: column-reverse nowrap;
   }
   .secondary-hebergements {
-    width: 70vw;
+    width: 90vw;
     padding: 5vh 5vw;
     margin: auto;
     background: white;
@@ -777,10 +790,6 @@ footer {
 
   .mosaique-content {
     margin: 3vh 0;
-  }
-
-  .mosaique-image {
-    height: 18vh;
   }
 
   .mosaique-column {
