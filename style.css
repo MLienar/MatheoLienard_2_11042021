@@ -779,6 +779,10 @@ footer {
     margin: 3vh 0;
   }
 
+  .mosaique-image {
+    height: 18vh;
+  }
+
   .mosaique-column {
     flex: 1;
     margin: 0 !important;
